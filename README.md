@@ -14,3 +14,4 @@ https://www.nhh.no/en/study-programmes/phd-programme-at-nhh/phd-courses/become-a
 For further details see the course page; participants must cover their own travel and living costs; no support is offered, I'm afraid, apart from free tuition.
 
 
+
