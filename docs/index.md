@@ -31,13 +31,19 @@ The course is moving towards a module-based course with modules:
 
 - 0 introduction (week 38, 2 hours not yet scheduled 19-20 September);
 
+- Studying materials prior to QA/discussion at I
+
 - I spatial data representation and visualization (week 40, 2 hours not yet scheduled 3-4 October); 
 
-- II spatial autocorrelation and regression (week 42, 2 hours not yet scheduled 20-21 October); 
+- Studying materials prior to QA/discussion at II
+
+- II spatial autocorrelation and regression (week 42, 2 hours not yet scheduled 17-18 October); 
+
+- Studying materials prior to QA/discussion at III
 
 - III advanced topics in spatial data analysis (on-site week 46, 14-18 November). 
 
-Modules 0-II by zoom and on-site, module III on-site and streamed/recorded, but off-site participants just observe; for credits, on-site participation is required unless the institution 
+Modules 0-II by zoom and on-site for those based in Bergen, module III on-site and streamed/recorded, but off-site participants just observe; for credits, on-site participation is required unless the institution 
 
 Module 0 is to coordinate participants, and in particular to lets us shape the contents of module III. Since an important part of the work will be done before the intensive week, ensuring that everyone is on board matters.
 
