@@ -7,7 +7,7 @@ https://www.nhh.no/en/courses/analysing-spatial-data/
 
 Three short "flipped" two-hour sessions will be held Tuesdays September 20 and October 4 and 18 on-line for remote participants (these will be based on own study); a consultation slot November 1 is also planned to firm up project ideas. Intensive follow-up sessions will follow on-site in November permitting interaction between participants.
 
-External participants should apply using this form, best well before the 1 September deadline to permit processing before the first short session:
+External participants should have applied using this form before the 1 September deadline to permit processing before the first short session:
 
 https://www.nhh.no/en/study-programmes/phd-programme-at-nhh/phd-courses/become-a-visiting-student-at-a-phd-course-at-nhh/
 

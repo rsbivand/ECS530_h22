@@ -45,7 +45,7 @@ The course is moving towards a module-based course with modules:
 
 - III advanced topics in spatial data analysis (on-site week 46, 14-18 November). 
 
-Modules 0-II by zoom and on-site for those based in Bergen, module III on-site and streamed/recorded, but off-site participants just observe; for credits, on-site participation is required unless the institution 
+Modules 0-II by zoom and on-site for those based in Bergen, module III on-site and streamed/recorded, but off-site participants just observe; for credits, on-site participation is required unless the institution is obliged to close the campus for example because of lock-down.
 
 Module 0 is to coordinate participants, and in particular to lets us shape the contents of module III. Since an important part of the work will be done before the intensive week, ensuring that everyone is on board matters.
 
