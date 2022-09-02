@@ -1,0 +1,21 @@
+---
+title: "ECS530 evaluation guide"
+author: "Roger Bivand"
+date: "2 September 2022"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+This evaluation guide (sensorveiledning) is based on the goals for learning outcomes for this course. The course is evaluated by the instructor using one pre-project presentation (qualitative feedback, no separate grade) and a written individual project report (possibly) co-evaluated by the instructor and an external examiner. 
+
+Project-based evaluation is chosen for this course because understanding of the knowledge components of learning outcomes is best advanced using cases. Cases (examples) are used in class instruction, buttressed by cover of conceptual bases in relevant disciplines (not only economics). 
+
+The choice of individual projects is motivated by learning outcome goals under skills and competence.
+
+The first task is to choose a project topic, with supervision and qualitative feedback offered. The choice and development of the project topic should display relevance in relation to at least some of the knowledge learning outcomes goals of the course.
+
+It is the responsibility of the participant to make use of offered supervision in preparing the draft report; it is advantageous if you learn from each other, as many encountered process issues are shared. It is important that the project reports problematise the construction of research questions, and the uncertainty that may be present in any findings. The instructor can offer advice until three weeks before the due date for final project report delivery, but after this time can only assist with formal matters. Evaluation is based on the application of the goals for learning outcomes to the final group project reports.
+
+
+(version of 2 September 2022)

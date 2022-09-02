@@ -1,0 +1,14 @@
+---
+title: "ECS530 2020: Project notes"
+author: "Roger Bivand"
+date: "2 September 2022"
+output: html_document
+---
+
+Project topics are often components of your own work, or may be synthetic or from standard data sets. You may find it helpful to examine several candidate project topics, because it may turn out that sources and/or data are more accessible for some choices than others. It is also possible to conduct a broader literature review as a project, but this is typically harder to finalise. 
+
+It is very helpful to narrow chosen topics down to specific cases for which data is available. Choosing an ambitious topic for which it turns out later that no relevant data are available should be avoided.
+
+There are three important R words: Research question; References; Relevance. In moving from topic idea to project outline, think carefully about how the research question is framed - do make it a question with a question mark, as this makes it easier to reach closure. Reviews and descriptions do not perform as well as attempts to approach a research question. Do use references to the academic literature; references can save a lot of time with regard to the definition of a fruitful research question. Finally, take care to stay relevant, with focus on the spatial and/or spatio-temporal setting of your research question. Remember: Research question; References; Relevance.
+
+Your final projects may vary in length between 10-15 pages including figures, tables, appendices and references. You may append a short log to the projects, which will explain the motivation for the choice of the project topic, and the progress of work in the group. Remember to use PDF format, and to compress or rescale imagery so that files are small. Prepare zip archives of supplementary information, if possible with the scripts needed to reproduce your results and access to data used.

@@ -29,17 +29,19 @@ Combined lectures and computer practicals, concluding with draft project present
 
 The course is moving towards a module-based course with modules: 
 
-- 0 introduction (week 38, 2 hours not yet scheduled 19-20 September);
+- 0 introduction (week 38, 2 hours 20 September (time to follow));
 
 - Studying materials prior to QA/discussion at I
 
-- I spatial data representation and visualization (week 40, 2 hours not yet scheduled 3-4 October); 
+- I spatial data representation and visualization (week 40, 2 hours 4 October (time to follow)); 
 
 - Studying materials prior to QA/discussion at II
 
-- II spatial autocorrelation and regression (week 42, 2 hours not yet scheduled 17-18 October); 
+- II spatial autocorrelation and regression (week 42, 2 hours 18 October (time to follow)); 
 
 - Studying materials prior to QA/discussion at III
+
+- pre-III consultation slot (week 44, 2 hours 1 November (time to follow))
 
 - III advanced topics in spatial data analysis (on-site week 46, 14-18 November). 
 
@@ -47,9 +49,9 @@ Modules 0-II by zoom and on-site for those based in Bergen, module III on-site a
 
 Module 0 is to coordinate participants, and in particular to lets us shape the contents of module III. Since an important part of the work will be done before the intensive week, ensuring that everyone is on board matters.
 
-Modules I and II are "flipped" based on recorded talks, materials and exercises, so interaction prior to the intensive week is to answer immediate questions and discussion topics raised by participants.
+Modules I and II are "flipped" based on recorded talks, materials and exercises, so interaction prior to the intensive week is to answer immediate questions and discussion topics raised by participants. The pre-III slot is to provide opportunities to discuss the individual project/term paper that has to be submitted (in early January 2023, date to be confirmed) for assessment if participants wish to gain ECTS credits - more details in [Project requirements](https://rsbivand.github.io/ECS530_h22/project_report_requirements.html) and [Evaluation guide](https://rsbivand.github.io/ECS530_h22/evaluation_guide.html).
 
-Course-internal communication will be on Canvas, requiring a login issued after registration. Zoom links for I and II will be published on Canvas; for 0, both Canvas and by email for any participants not yet in Canvas.
+Course-internal communication will be on Canvas, requiring a login issued after registration. Zoom links for I, II and pre-III will be published on Canvas; for 0, both Canvas and by email for any participants not yet in Canvas.
 
 ### Links to materials:
 
