@@ -13,7 +13,9 @@ We will meet for short 2-3 hour sessions on Tuesdays 09:00-12:00 CEST: 20 Septem
 
 The course is partly "flipped" out of caution - you will all have the oportunity to learn quite a lot before we meet 14 November anyway. Should anything unexpected hinder our meeting 14-18 November, we should then be better placed to complete the course properly, than if no preparatory work has been completed. The intention remains that the 14-18 November week is intensive and on-site for all who require credits.
 
-You are expected to work using online materials largely in Canvas between 20 September and 4 October on topic I: spatial data representation and visualization, and between 4 and 18 October on topic II: spatial autocorrelation and introductory spatial regression. There is time for slippage if anyone is delayed in getting access to Canvas, but by 14 November everyone is expected to be well prepared, and to have a good idea which short project to conduct to present for input from other participants and if credits are required for evaluation.
+You are expected to work using online materials largely in Canvas between 20 September and 4 October on topic I: spatial data representation and visualization, and between 4 and 18 October on topic II: spatial autocorrelation and introductory spatial regression. An introduction to materials for topic I are online at: https://rsbivand.github.io/ECS530_h22/ECS530_22_I.html.
+
+There is time for slippage if anyone is delayed in getting access to Canvas, but by 14 November everyone is expected to be well prepared, and to have a good idea which short project to conduct to present for input from other participants and if credits are required for evaluation.
 
 On 20 September, I'll introduce the course structure, and answer your questions about the way the course is organised. Because videos, articles and books are largely only available in Canvas, access to Canvas is essential.
 

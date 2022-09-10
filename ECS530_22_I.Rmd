@@ -1,0 +1,56 @@
+---
+title: "ECS530: Spatial data analysis I"
+author: "Roger Bivand"
+date: "20 September - 4 October 2022"
+output: 
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 2
+theme: united
+bibliography: ecs530_22.bib
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, paged.print=FALSE)
+```
+
+### Copyright
+
+All the material presented here, to the extent it is original, is available under [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+## Materials
+
+Within Canvas (NHH's portal for courses), access to published written material is through Leganto. This goes via an proxy library link with the same login as Canvas, which gives library access to otherwise restricted references. Some of these are also open access, which means that even without Canvas access, some materials are available, and others may be available without access if participants' affiliations give local library access to restricted references. Access via Canvas and Leganto is certainly preferable.
+
+Scripts and materials from earlier editions of ECS530 are on Github, as is the case for this edition.
+
+Videos from ECS530 2020 (last recorded edition, recordings from zoom) are available in Canvas with one exception https://www.youtube.com/watch?v=2H1Tn4oN32M, complemented by materials on github: https://rsbivand.github.io/ECS530_h20/; from 2019 (classroom recordings) are on the OpenGeoHub YouTube channel https://www.youtube.com/playlist?list=PLXUoTpMa_9s10NVk4dBQljNOaOXAOhcE0, complemented by materials on github: https://rsbivand.github.io/ECS530_h19/. Recordings of conference talks, webinars and panels are openly available. 
+
+Materials in Canvas also include a module of "Other materials" with links to webinars, conference talks, etc. - other links are being added, and an "R introduction" module with short videos on using R.
+
+For recent introductions, Paula Moraga's useR! 2022 keynote (https://www.youtube.com/watch?v=wif3dmkUs5o&list=PL77T87Q0eoJi2VLI8HHVA08m1d5zfQsWJ&index=1), and/or Jakub Nowosad's OpenGeoHub 2022 talk (https://www.youtube.com/watch?v=a4imsVqbGY0, https://jakubnowosad.com/ogh2022) may be useful. Both of these scholars are authors in open-access book projects: https://geocompr.robinlovelace.net/index.html, https://www.paulamoraga.com/book-geospatial-info/. Many articles are also now published open-access.
+
+
+## Representing and visualizing spatial data
+
+This is a "flipped" module, and admits varying speeds and choices. The first 9 chapters of https://geocompr.robinlovelace.net/index.html, chapter 2 of https://www.paulamoraga.com/book-geospatial-info/, and or the first 9 chapters of https://keen-swartz-3146c4.netlify.app/ (a fresher version should be online soon) complement the first two days of ECS530 2019-2021. They cover similar topics, overlap in places, and sometimes differ in the weight given to different topics. https://paezha.github.io/spatial-analysis-r/ is another choice, complementing geocompr, with more structured learning objectives. All of these open-access book projects invite your contributions, and foster the development of non-competitive communities where authority is earned by being able to show through code how tasks may be carried out.
+
+The learning process should kick-off now by discussion of how you, course participants, can assist each other in working. Please feel free to set up reading groups, to split up topics between yourselves to give reasonable coverage, and, crucially, share data sets (they can be data sets from **spData** and **spDataLarge**) and code to show how to do things, including data import/export, data manipuation and visualization. 
+
+The representation of spatial data is non-trivial, as this figure by Peter Burrough, one of the founders of geographical information systems, shows:
+
+```{r, echo=FALSE, out.width=827}
+knitr::include_graphics("burrough-real.png") 
+```
+
+
+There are aspects of reality that our data models cannot capture, and there are then aspects of the data models that our data representation cannot capture. We can represent aspects of reality, but our operationalised measurements are not reality. One problem is that maps are not reality (fixed in time, two-dimensional), another that we often observe or measure variables which only proxy the concepts we are trying to study.
+
+Visualization is also challenging, both because analytical and presentation graphics can get conflated, and because we now have very little grasp of how readers of graphic output perceive what we are trying to portray - Mark Mormonier's book on How to lie with maps presents some specific problems including some in thematic cartography; Alberto Cairo's Ihaka lecture from 2018 is relevant: https://www.youtube.com/watch?v=Cd046xZhO_8.
+
+
+
