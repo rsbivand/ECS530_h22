@@ -22,6 +22,16 @@ knitr::opts_chunk$set(echo = TRUE, paged.print=FALSE)
 
 All the material presented here, to the extent it is original, is available under [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/). 
 
+## Preparatory
+
+Most of the materials share a "reporoducible" structure, with the web documents being generated from "notebooks", earlier `Sweave` documents with R code embedded in LaTeX source, and pre-processed to insert the code and output into the document before rendering to for example PDF. Since Rstudio and the **knitr** package became available, the R markdown format has become established - the new Quarto format (`.qmd`, for our purposes just like `.Rmd`) is now also sometimes seen.
+
+This means that when watching a video, you should be able to have downloaded the presentation, the code, and any required data sets. The same model applies to articles published in the R Journal http://journal.r-project.org/ and Journal of Statistical Software https://www.jstatsoft.org/index. This should mean that you can run the code (for example in Rstudio) at the same time as you view the video, and/or presentation document/slides. Maybe watch the video on a phone or tablet if your laptop screen is cramped. The idea is not to treat videos, articles or book chapters as one-way communication only, but to be actively engaged with the code generating the output. 
+
+Note that current versions of packages may not behave exactly like the versions used for generating the original output. In https://doi.org/10.1007/s10109-020-00336-0, a codechecking system and zenodo timestamping were used to certify that the then status of https://github.com/rsbivand/JGSY-D-19-00087 matched the output, but in most cases, like https://doi.org/10.1111/gean.12319, just a repo (repository) is given: https://github.com/rsbivand/gaSI21 with a zenodo stamp.
+
+The latter and a manuscript "Analytical Environments" also mention Python workflows leading to similar outcomes as the R workflows.
+
 ## Materials
 
 Within Canvas (NHH's portal for courses), access to published written material is through Leganto. This goes via an proxy library link with the same login as Canvas, which gives library access to otherwise restricted references. Some of these are also open access, which means that even without Canvas access, some materials are available, and others may be available without access if participants' affiliations give local library access to restricted references. Access via Canvas and Leganto is certainly preferable.

@@ -7,6 +7,10 @@ output:
 theme: united
 ---
 
+### Updated course information (12 September)
+
+Both this guide and introductions to materials will evolve over time. While working on the "flipped" modules, I realised that II would be too full, so I suggest splitting II into IIa spatial autocorrelation and IIb spatial regression. It remains the case that representation and visualization are both large topics, but they are better supported in the available materials.
+
 ### Course information (9 September)
 
 We will meet for short 2-3 hour sessions on Tuesdays 09:00-12:00 CEST: 20 September (Aud. J), 4 and 18 October (both Aud. F) and 1 November (Aud. G, CET - winter time); zoom link to follow for off-site participants. We will not use all three hours, but we have time for set-up and breaks with the three hour room reservation slots. The zoom link will be posted in a Canvas announcement, and emailed only the first time to any not yet active in Canvas.
@@ -23,31 +27,33 @@ In addition, please think through topics that you would like to go into in more 
 
 ### Course structure
 
-Combined lectures and computer practicals, concluding with draft project presentations on final day. Participants use their own laptop computers. Autumn semester 2022: the talks will be streamed and recorded. It may be possible to observe remotely, but for those able to travel to Bergen, interaction with other participants will be much more fruitful.
+Combined lectures and computer practicals, concluding with draft project presentations on final days (more than one day needed given interest in the course). Participants use their own laptop computers. Autumn semester 2022: on-site talks will be streamed and recorded. It may be possible to observe remotely, but for those able to travel to Bergen, interaction with other participants will be much more fruitful.
 
 The course is moving towards a module-based course with modules: 
 
-- 0 introduction (week 38, 2 hours 20 September (time to follow));
+- 0 introduction (week 38, 2 hours 20 September 9.00-12.00);
 
 - Studying materials prior to QA/discussion at I
 
-- I spatial data representation and visualization (week 40, 2 hours 4 October (time to follow)); 
+- I spatial data representation and visualization (week 40, 2 hours 4 October 9.00-12.00); 
 
-- Studying materials prior to QA/discussion at II
+- Studying spatial data representation and visualization materials prior to QA/discussion at IIa
 
-- II spatial autocorrelation and regression (week 42, 2 hours 18 October (time to follow)); 
+- IIa spatial autocorrelation (week 42, 2 hours 18 October 9.00-12.00); 
 
-- Studying materials prior to QA/discussion at III
+- Studying spatial autocorrelation materials prior to QA/discussion at IIb
 
-- pre-III consultation slot (week 44, 2 hours 1 November (time to follow))
+- IIb spatial regression; introduction to project/term-paper process (week 44, 2 hours 1 November 9.00-12.00)
+
+- Studying spatial regression materials prior to QA/discussion at III, preparation of project topics
 
 - III advanced topics in spatial data analysis (on-site week 46, 14-18 November). 
 
-Modules 0-II by zoom and on-site for those based in Bergen, module III on-site and streamed/recorded, but off-site participants just observe; for credits, on-site participation is required unless the institution is obliged to close the campus for example because of lock-down.
+Modules 0-IIb by zoom and on-site for those based in Bergen, module III on-site and streamed/recorded, but off-site participants just observe; for credits, on-site participation is required unless the institution is obliged to close the campus for example because of lock-down.
 
 Module 0 is to coordinate participants, and in particular to lets us shape the contents of module III. Since an important part of the work will be done before the intensive week, ensuring that everyone is on board matters.
 
-Modules I and II are "flipped" based on recorded talks, materials and exercises, so interaction prior to the intensive week is to answer immediate questions and discussion topics raised by participants. The pre-III slot is to provide opportunities to discuss the individual project/term paper that has to be submitted (in early January 2023, date to be confirmed) for assessment if participants wish to gain ECTS credits - more details in [Project requirements](https://rsbivand.github.io/ECS530_h22/project_report_requirements.html) and [Evaluation guide](https://rsbivand.github.io/ECS530_h22/evaluation_guide.html).
+Modules I, IIa and IIb are "flipped" based on recorded talks, materials and exercises, so interaction prior to the intensive week is to answer immediate questions and discussion topics raised by participants. The pre-III slot is to provide opportunities to discuss the individual project/term paper that has to be submitted (in early January 2023, date to be confirmed) for assessment if participants wish to gain ECTS credits - more details in [Project requirements](https://rsbivand.github.io/ECS530_h22/project_report_requirements.html) and [Evaluation guide](https://rsbivand.github.io/ECS530_h22/evaluation_guide.html).
 
 Course-internal communication will be on Canvas, requiring a login issued after registration. Zoom links for I, II and pre-III will be published on Canvas; for 0, both Canvas and by email for any participants not yet in Canvas.
 
