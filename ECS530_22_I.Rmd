@@ -24,13 +24,15 @@ All the material presented here, to the extent it is original, is available unde
 
 ## Preparatory
 
-Most of the materials share a "reporoducible" structure, with the web documents being generated from "notebooks", earlier `Sweave` documents with R code embedded in LaTeX source, and pre-processed to insert the code and output into the document before rendering to for example PDF. Since Rstudio and the **knitr** package became available, the R markdown format has become established - the new Quarto format (`.qmd`, for our purposes just like `.Rmd`) is now also sometimes seen.
+Most of the materials share a "reproducible" structure, with the web documents being generated from "notebooks", earlier `Sweave` documents with R code embedded in LaTeX source, and pre-processed to insert the code and output into the document before rendering to for example PDF. Since Rstudio and the **knitr** package became available, the R markdown format has become established - the new Quarto format (`.qmd`, for our purposes just like `.Rmd`) is now also sometimes seen.
 
 This means that when watching a video, you should be able to have downloaded the presentation, the code, and any required data sets. The same model applies to articles published in the R Journal http://journal.r-project.org/ and Journal of Statistical Software https://www.jstatsoft.org/index. This should mean that you can run the code (for example in Rstudio) at the same time as you view the video, and/or presentation document/slides. Maybe watch the video on a phone or tablet if your laptop screen is cramped. The idea is not to treat videos, articles or book chapters as one-way communication only, but to be actively engaged with the code generating the output. 
 
 Note that current versions of packages may not behave exactly like the versions used for generating the original output. In https://doi.org/10.1007/s10109-020-00336-0, a codechecking system and zenodo timestamping were used to certify that the then status of https://github.com/rsbivand/JGSY-D-19-00087 matched the output, but in most cases, like https://doi.org/10.1111/gean.12319, just a repo (repository) is given: https://github.com/rsbivand/gaSI21 with a zenodo stamp.
 
 The latter and a manuscript "Analytical Environments" also mention Python workflows leading to similar outcomes as the R workflows.
+
+Please also note that spatial data analysis in R evolves over time as package "niches" adapt to changes in underlying software. Please for example see a recent FOSS4G workshop (Free and Open Source Software for Geospatial): https://rsbivand.github.io/foss4g_2022/modernizing_220822.html. Core spatial R packages depend on key external C++ libraries, these libraries also evolve (the so-called "barn-raising" project), and older workflows either stop working or behave differently. This means that it is helpful to be aware that change happens, and thus that web searches for solutions to problems often lead to outdated apparent advice (especially as search results are not ranked by date newest first but by number of links and visits, very often oldest first. Jakub Nowosad's OpenGeoHub talk gives a good picture of this.
 
 ## Materials
 
@@ -61,6 +63,12 @@ knitr::include_graphics("burrough-real.png")
 There are aspects of reality that our data models cannot capture, and there are then aspects of the data models that our data representation cannot capture. We can represent aspects of reality, but our operationalised measurements are not reality. One problem is that maps are not reality (fixed in time, two-dimensional), another that we often observe or measure variables which only proxy the concepts we are trying to study.
 
 Visualization is also challenging, both because analytical and presentation graphics can get conflated, and because we now have very little grasp of how readers of graphic output perceive what we are trying to portray - Mark Mormonier's book on How to lie with maps presents some specific problems including some in thematic cartography; Alberto Cairo's Ihaka lecture from 2018 is relevant: https://www.youtube.com/watch?v=Cd046xZhO_8.
+
+
+```{r, echo=FALSE, out.width=225}
+knitr::include_graphics("mormonier.png") 
+```
+
 
 
 
