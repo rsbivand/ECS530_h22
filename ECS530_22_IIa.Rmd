@@ -73,7 +73,7 @@ knitr::include_graphics("tab2.png")
 ```
 
 
-https://r-spatial.org/book/14-Areal.html, https://cran.r-project.org/web/packages/spdep/vignettes/nb_sf.html (based on https://cran.r-project.org/web/packages/spdep/vignettes/nb.html).
+https://r-spatial.org/book/14-Areal.html (answers https://edzer.github.io/sdsr_exercises/14.html), https://cran.r-project.org/web/packages/spdep/vignettes/nb_sf.html (based on https://cran.r-project.org/web/packages/spdep/vignettes/nb.html).
 
 ### Why does IID (Independent and Identically Distributed) matter?
 
@@ -156,7 +156,7 @@ data.frame(mean=apply(df, 2, mean), median=apply(df, 2, median), sd=apply(df, 2,
 
 ### Measures for areal/lattice data
 
-@Bivand2018 and a follow-up: @sauer_oshan_rey_wolf_2021, see also https://r-spatial.org/book/15-Measures.html, @bivand:22 and my pre-pub "Analytical Environments" as well as other articles in Leganto in Canvas.
+@Bivand2018 and a follow-up: @sauer_oshan_rey_wolf_2021, see also https://r-spatial.org/book/15-Measures.html (answers https://edzer.github.io/sdsr_exercises/15.html), @bivand:22 and my pre-pub "Analytical Environments" as well as other articles in Leganto in Canvas.
 
 ### Suggestions
 
