@@ -1,0 +1,290 @@
+---
+title: "ECS530: Spatial data analysis IIb"
+author: "Roger Bivand"
+date: "18 October - 1 November 2022"
+output: 
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 2
+theme: united
+bibliography: ecs530_22.bib
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, paged.print=FALSE)
+```
+
+### Copyright
+
+All the material presented here, to the extent it is original, is available under [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+## Follow-up on topic IIa
+
+Questions about defining neighbours.
+
+Questions about spatial autocorrelation.
+
+Questions about global and local measures.
+
+## Spatial Regression
+
+Even though it may be tempting to focus on interpreting the map pattern of an area support response variable of interest, the pattern may largely derive from covariates (and their functional forms), as well as the respective spatial footprints of the variables in play. Spatial autoregressive models in two dimensions began without covariates and with clear links to time series [@whittle:54]. Extensions included tests for spatial autocorrelation in linear model residuals, and models applying the autoregressive component to the response or the residuals, where the latter matched the tests for residuals [@CliffOrd:72; @cliff+ord:73]. These "lattice" models of areal data typically express the dependence between observations using a graph of neighbours in the form of a contiguity matrix. 
+
+A division has grown up, possibly unhelpfully, between scientific fields using conditional autoregressive (CAR) models [@besag:74], and simultaneous autoregressive models (SAR) [@ord:75; @hepple:76]. Although CAR and SAR models are closely related, these fields have found it difficult to share experience of applying similar models, often despite referring to key work summarising the models [@ripley:81; @ripley:88; @Cressie:1993]. Ripley gives the SAR variance as [-@ripley:81, page 89]:
+
+$$
+{\rm Var}_S = \sigma^ 2(I-\lambda W_S)^{-1} (I-\lambda W_S^{\rm
+T})^{-1}
+$$
+where $\lambda$ is a spatial autocorrelation parameter and $W_S$ is a nonsingular matrix that represents spatial dependence. The CAR variance is:
+
+$$
+{\rm Var}_C = \sigma^ 2(I-\lambda W_C)^{-1}
+$$
+where and $W_C$ is a symmetric and strictly positive definite matrix
+
+More recent books expounding the theoretical bases for modelling with areal data simply point out the similarities in relevant chapters [@gaetan+guyon:10; @vanlieshout:19]; the interested reader is invited to consult these sources for background information and examples using the functions described below.
+
+Of course, handling a spatial correlation structure in a generalised least squares model or a (generalised) linear or nonlinear mixed effects model such as those provided in the **nlme** and many other packages does not have to use a graph of neighbours [@R:Pinheiro+Bates:2000]. These models are also spatial regression models, using functions of the distance between observations, and fitted variograms to model the spatial autocorrelation present; such models have been held to yield a clearer picture of the underlying processes [@wall:04], building on geostatistics. For example, the **glmmTMB** package successfully uses this approach to spatial regression [@brookesetal:17].
+
+### Autocorrelation in model residuals
+
+@smith+lee12 and a recent [pre-print](https://doi.org/10.22541/au.164932203.31031660/v1) link (implicitly) to @McMillen:2003 and @https://doi.org/10.1111/j.2007.0906-7590.05171.x. We'll return to these topics in mid-November if there is interest. Does spatial autocorrelation in model residuals only signify spatial dependence? What about functional form, missing covariates, unmodelled heterogeneity, etc.? Is modelled apparent residual spatial dependence actually proxying for a broader set of mis-specification problems? As dependencies can generalise from just spatial dependencies to graph dependencies and (social) network dependencies, what choices seem sound? May @murakami2021spatial (aka principal components of neighbourhood matrices, PCNM,  @drayetal12, @dray+legendre+peres-neto:06) help @https://doi.org/10.1111/gean.12156? Or GWR @https://doi.org/10.1111/gean.12316 ? Limited dependent variables? Bayesian?
+
+### Multilevel models
+
+@dongetal15 Much began from work by Kelvin Jones collaborating with sociologists, epidemiologists and political scientists: som recent publications @doi:10.1177/2399808318782703 @bell_jones_2015 @CAICEDOVELASQUEZ2020100318.
+
+@bivandetal17a compares some implementations, while @Bivand_2017 questions the aggregation level initially chosem - the copying-out problem creating strong covariate spatial autocorrelation.
+
+### Background to spatial econometrics
+
+In the same way that @fujitaetal:99 begin their study of the
+spatial economy by looking at the antecedents of their subject, it
+is helpful to place spatial econometrics in its temporal and academic
+context. This context is sufficiently different from the contemporary
+setting that it may be hard to grasp the background for many of the
+features of spatial econometrics that came into being during its earlier
+years. Indeed, the ranges of topics that were studied in economics in
+the 1960's and 1970's differ markedly from those in focus today. If we
+can sketch the context within which spatial econometrics was created,
+and its methods developed, we should be able to illuminate choices
+made then which influence our understanding and application of spatial
+econometric methods.
+
+Critics of the practice of spatial econometrics, such as
+@gibbons+overman:12, appear to overlook these antecedents, and
+consequently judge the potential of the field on a partial, perhaps
+anachronistic, understanding, viewing phenomena with a history in
+ahistorical way. Since we are attempting to provide an introduction to
+applied spatial econometrics, we need to throw light on the original
+motivations and concerns of the first scholars engaged in the field.
+@anselin:10 indicates clearly and repeatedly [@anselin:88;
+anselin:06; anselin:10a] that we should acknowledge *Spatial
+Econometrics* by @paelinck+klaassen:79 of the Netherlands Economic
+Institute as our starting point, and so celebrates thirty years of
+spatial econometrics in 2009. This firm confirmation of the importance
+of Jean Paelinck's contributions as scholar and community-builder
+is fully justified. We should then turn to the motivations given in
+@paelinck+klaassen:79 to indicate which contextual factors were
+of importance at that time, and the breadth of the academic communities
+with which they were in contact.
+
+In a recent short commentary, @paelinck:13 recalls his
+conviction, expressed in 1967, that "early econometric exercises $\ldots$
+relating only variables possessing the same regional index $\ldots$ were
+inadequate to represent the correct spatial workings of the economy,
+which would then be reflected in the policy outcomes." A year before,
+@paelinck:12 points to salient isomorphisms linking
+spatial regression models, simultaneous equation models and input-output
+models; these were known of and discussed in the early formative period
+of spatial econometrics. We will return in subsequent chapters to the
+ways in which spatial regression models may be specified, but for now,
+a simple presentation of these isomorphisms as perceived in the early
+period is sufficient:
+
+\[
+{\mathbf y} = {\mathbf A}{\mathbf y} + {\mathbf X}{\mathbf b} + {\mathbf \varepsilon}
+\]
+
+is a spatial regression model where ${\mathbf A}$ is a matrix expressing
+the mutual first order spatial dependencies between regions --- the
+similarity of this form and the Koyck distributed lag model is striking
+[@koyck:54; @klein:58; @griliches:67];
+
+\[
+{\mathbf A}{\mathbf y} + {\mathbf X}{\mathbf b} = {\mathbf \varepsilon}
+\]
+
+is a simultaneous equation model where ${\mathbf A}$ is a matrix expressing the dependencies between the equations; and:
+
+\[
+{\mathbf y} = {\mathbf A}{\mathbf y} + {\mathbf f}
+\]
+
+is an input-output model where ${\mathbf A}$ is a matrix of sectoral 
+input-output coefficients, and ${\mathbf f}$ is final demand.
+
+Input-output models, simultaneous equation models, and the importance of
+policy outcomes were all known intimately at the Netherlands Economic
+Institute at this time, and elsewhere among applied economists. The
+isomporhisms flowed from the known to the unknown, from the stuff of
+contemporary research and policy advice to doubts about the calibration
+of aspatial models, and on to what became termed spatial econometrics. If
+we compare these topics with those described for Regional Science by
+@boyce:04, we can see the outlines of research priorities at the
+time: including urban and regional models for planning, regional and
+interregional input-output models, transport and location models. During
+the 1960s and 1970s, many of these models were enhanced --- matching needs
+for policy advice --- to cover environmental questions, adding natural
+resources as inputs and pollution to outputs. Paelinck's co-author in a
+key paper in spatial econometrics [@hordijk+paelinck:76], went on
+to work in environmental management and research.
+
+Reading @paelinck+klaassen:79, we see that the programme
+of research into the space economy undertaken at the Netherlands Economic
+Institute led first to the publication of @paelinck+nijkamp:75,
+and then to @klaassenetal:79, published in the same year as
+**Spatial Econometrics**. All three books were published in the
+same series and appear to reflect the core concerns of economists at
+the Institute doing research on regionalised national macro-economic
+models. The direct link to Jan Tinbergen is evident in the account
+of the context of economic research in the Netherlands given by
+@theil:64. If we take Paelinck at his word, he and
+his colleagues were aware that an aspatial regionalisation of national
+accounts, of input-output models, or transport models, might prejudice
+policy advice and outcomes through inadequate and inappropriate
+calibration.
+
+@klaassenetal:79 is mainly concerned with model construction, while
+about a third of @paelinck+nijkamp:75 is devoted to input-output
+analysis. Both books show sustained concern for economic measurement,
+especially of national accounts data, intersectoral transactions, and many
+other topics. Considerable attention is also paid to the data collection
+units, be they sectors or regions.  The need to attempt to define regions
+that match the underlying economic realities was recognised clearly, and
+a key part of @paelinck+nijkamp:75 is devoted to regionalisation,
+and the distinction between functional regions and homogeneous regional
+classifications is made. In the motivation for spatial econometric
+models given in @paelinck+klaassen:79, consumption
+and investment in a region are modelled as depending on income both in
+the region itself and in its contiguous neighbours, termed a "spatial
+income-generating model." It became important to be able to calibrate
+planning models of this kind to provide indications of the possible
+outcomes of alternative policy choices, hence the need for spatial
+econometrics.
+
+Economic planning was widespread in Europe at the time, and was also
+central in the development of Regional Science, in particular input-output
+models; as @boyce:04 recounts, Walter Isard worked closely with
+Wassily Leontief. Operational and planning motivations for applied
+economics were unquestioned, as economists in the post-war period saw
+their role, beyond educating young economists, as providing rational
+foundations for economic policy. It is worth noting that Jean Paelinck
+participated actively in the Association de Science Régionale De Langue
+Française, becoming president in 1973--1976. The first president of
+the association was François Perroux, who had founded it with Walter
+Isard in 1961 [@baillyetal:12].
+
+Until the 1980s, it was not at all unusual to publish original
+results in other languages than English. French spatial economic
+research, for example @ponsard:83, while making little impact
+in Anglophone countries, was widely used in teaching and research
+elsewhere [@billot+thisse:92]. They contrast, though, the "word
+wizardry of François Perroux with the rigour of Claude Ponsard"
+[@billot+thisse:92], echoing the views expressed by
+@dreze:64 with regard to the work of Perroux. Even
+if we accept that "word wizardry" deserves more rigour and recasting
+in normative and empirically testable forms, it is also part of the
+context within which spatial econometrics came into being. A reading of
+@perroux:50 is worthwhile,
+because it not only gives the reader a vignette of the context in
+the post-war period, but also provides a discussion of economic space,
+as opposed to banal, unreflected space --- mere position --- that has
+largely disappeared from our considerations.
+
+The title of the journal: *Regional and Urban Economics, Operational Methods* , founded by Jean Paelinck in 1971, and which
+was renamed as *Regional Science and Urban Economics* in 1975
+[@boyce:04], points to the perceived importance of
+"operational methods", a version of the term "operational theory
+and method" used in the title of @paelinck+nijkamp:75. Spatial
+econometrics does not seem to have come into being as a set of estimation
+techniques as such, as perhaps we might think today, but rather as
+an approach addressing open research questions both in space economy
+and in the enhancement of interregional models to be used in offering
+policy advice.
+
+Were motivations of this kind common during the 1960s and early
+1970s? Not only was the spread of Regional Science extensive and
+firmly established [@boyce:04], but public bodies were concerned
+to regionalise economic measurement and policy advice [@graham+romans:71]. In Britain, *Environment
+and Planning* was started in 1969 with Alan Wilson as founding
+editor and published by Pion; he was assistant director at the
+Centre for Environmental Studies at this time before moving to
+the University of Leeds. In a recently published lecture series,
+@wilson:12 cites @paelinck+nijkamp:75 as
+giving principles for contributions from economics to urban and regional
+analysis [@wilson:00].  The papers presented at
+annual Regional Science meetings were published in a series by Pion; the
+first number in the series included contributions by @granger:69
+and @cliff+ord:69.
+
+In a contribution to a panel session at the 2006 annual meeting of
+the American Association of Geographers (co-panelists Luc Anselin
+and Daniel Griffith), Keith Ord pointed to the continued relevance
+of Granger's remarks at the meeting almost forty years earlier
+[@ord:10]; we will return to these concerns below. As
+noted by @bivand:08, communities of researchers working
+in and near mathematical and theoretical geography was more integrated
+in the pre-internet and pre-photocopier age than one might expect, with
+duplicated working papers prepared using stencils circulating rapidly
+between collaborating academic centres. Knowledge of the preliminary
+results of other researchers then fed through into rapid innovation
+in an exciting climate for those with access to these meetings and
+working papers.
+
+There was considerable overlap between quantitative geography and
+regional science, so that work like @cliff+ord:69 is cited by
+@hordijk:74, and was certainly known at the Netherlands Economic
+Institute several years earlier. Although it has not been possible
+to find out who participated in the August 1968 conference of the
+British and Irish Section of the Regional Science Association at which
+@cliff+ord:69 was read, it was not unusual for members of other
+sections to be present, and to return home with bundles of duplicated
+papers. Up to the 1990s, presenters at conferences handed out copies of
+their papers, and conference participants posted home parcels of these
+hand-outs, indexed using the conference programme.
+
+Leslie Hepple was among the more thorough scholars working on the
+underpinnings of spatial econometrics prior to the publication of
+@paelinck+klaassen:79. His wide-ranging review [@hepple:74]
+is cited by @bartels+hordijk:77, again demonstrating the close
+links between those working in this field. We will be returning to
+the review paper, and to @hepple:76, which studies methods of
+estimation for spatial econometrics models in some depth, building on
+and extending @ord:75.
+
+@hepple:74, like @cliff+ord:73, saw no distinction between
+spatial statistics and the antecedents to spatial econometrics. Obviously,
+spatial econometrics was strongly influenced by the research tasks
+undertaken by regional and urban economists and regional scientists. As
+@griffith+paelinck:07 point out, spatial statistics and
+spatial econometrics continue to share most topics of interests, with each
+also possessing shorter lists of topics that have been of less concern to
+the other. They advocate a "non-standard" spatial econometrics, which
+is inclusive to wider concerns. It seems appropriate in this context to
+mention the somewhat heterodox position taken by @mcmillen:10,
+who draws attention to the crucial issue of functional form, which he
+argues may well lie behind observed spatial autocorrelation.
+
+@math9111276 is a recent software review. See @doi:10.1177/0160017619826264 on impact estimates.
+
+### Suggestions
+
+
+
+

@@ -1,0 +1,37 @@
+---
+title: "ECS530: Spatial data analysis preIII"
+author: "Roger Bivand"
+date: "1 - 14 November 2022"
+output: 
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 2
+theme: united
+bibliography: ecs530_22.bib
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, paged.print=FALSE)
+```
+
+### Copyright
+
+All the material presented here, to the extent it is original, is available under [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+## Follow-up on topic IIb
+
+Questions about autocorrelation in model residuals.
+
+Questions about multilevel models.
+
+Questions about spatial econometrics.
+
+
+## 
+
+
+
