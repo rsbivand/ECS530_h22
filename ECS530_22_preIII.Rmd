@@ -28,10 +28,44 @@ Questions about autocorrelation in model residuals.
 
 Questions about multilevel models.
 
-Questions about spatial econometrics.
+Questions about spatial econometric models.
 
 
-## 
+## Topic suggestions for 14-18 November
+
+Given the number of participants this year, we'll need to use about two whole days (Thursday 17 and Friday 18 November) for presentation and discussion of project proposals, and more time for consultation. This means that we need a prioritized list of topics that participants would like me to present during the first three days and that are feasible for me to prepare. These may include topics already covered in the material I have asked you to work with during the past six weeks. 
+
+The more topics chosen, the less time for consultation. Should I put up a quiz in Canvas to elicit responses?
+
+Some suggestions:
+
+- visualization and mapping (2h)
+
+- coordinate reference systems (1h)
+
+- external software libraries used to support R, Python and other packages (1h)
+
+- linking R and GRASS GIS (and other GIS) (2h)
+
+- **terra** and **raster**: ways forward (1h)
+
+- evolution of `r-spatial` and `rspatial` (1h)
+
+- data set puzzles (Boston housing, New Orleans Katrina business restarts) (1h)
+
+- global and local measures of spatial autocorrelation (2h)
+
+- global and local impact measures in spatial econometrics (2h)
+
+- PCNM and spatial filtering (2h)
+
+and your suggestions.
+
+
+## Progress in framing project proposals
+
+For those intending to hand in projects for evaluation, I suggest responding to a Canvas quiz to be published shortly. I may also publish a doodle for indicating a schedule for consultation, so that all who feel scheduling a meeting with me (before or during the intensive week) would help focus your thinking.
+
 
 
 
