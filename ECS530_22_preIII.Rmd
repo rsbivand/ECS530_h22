@@ -24,7 +24,7 @@ All the material presented here, to the extent it is original, is available unde
 
 ## Release of R 4.2.2 yesterday
 
-I have upgraded to R 4.2.2; for Windows users, geospatial external libraries have been upgraded and many drivers enhanced.
+I have upgraded to R 4.2.2; for Windows users, geospatial external libraries will be upgraded shortly and many drivers enhanced.
 
 ## Follow-up on topic IIb
 
