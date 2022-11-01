@@ -7,6 +7,10 @@ output:
 theme: united
 ---
 
+### Course information (27 October)
+
+An introduction to materials for topic IIb is online at: https://rsbivand.github.io/ECS530_h22/ECS530_22_preIII.html.
+
 ### Course information (17 October)
 
 An introduction to materials for topic IIb is online at: https://rsbivand.github.io/ECS530_h22/ECS530_22_IIb.html.
