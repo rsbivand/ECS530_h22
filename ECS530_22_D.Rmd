@@ -1,0 +1,49 @@
+---
+title: "ECS530: Spatial data analysis D"
+author: "Roger Bivand"
+date: "Thursday 15 November 2022"
+output: 
+  html_document:
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    toc_depth: 2
+theme: united
+bibliography: ecs530_22.bib
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, paged.print=FALSE)
+```
+
+### Copyright
+
+All the material presented here, to the extent it is original, is available under [CC-BY-SA](https://creativecommons.org/licenses/by-sa/4.0/). 
+
+## Plan for 17-18 November 2022
+
+### Thursday 17/11
+
+09:00-10:15 Spatial autocorrelation and machine learning
+
+10:30-11:30 Point pattern analysis
+
+11:30-12:00 Point pattern analysis (exercises)
+
+13:00-14:30 Transport, networks, transmission
+
+14:45-15:45 Transport, networks, transmission (exercises)
+
+
+### Friday 18/11
+
+Depending on the number of participants wishing to present project outlines (about 25 minutes, 10-15 minutes presentation, 10-15 minutes discussion, the number of slots may vary.
+
+09:00-12:00 Presentation of up to six project outlines, with 20 min. break.
+
+13:00-16:00 Presentation of up to six project outlines, with 20 min. break.
+
+
+
