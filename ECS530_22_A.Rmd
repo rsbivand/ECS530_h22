@@ -102,7 +102,7 @@ Wifi internet is available throughout the NHH campus. If you already use *eduroa
 
 ## Visualization and mapping with coordinate reference systems
 
-niches, geodetics, cartographers datavis
+niches, geodetics, cartographers, datavis
 
 https://priceonomics.com/how-william-cleveland-turned-data-visualization/
 
