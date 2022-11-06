@@ -102,6 +102,36 @@ Wifi internet is available throughout the NHH campus. If you already use *eduroa
 
 ## Visualization and mapping with coordinate reference systems
 
+niches, geodetics, cartographers datavis
+
+https://priceonomics.com/how-william-cleveland-turned-data-visualization/
+
+http://www.gradaanwr.net/
+
+https://clauswilke.com/dataviz/
+https://clauswilke.com/dataviz/geospatial-data.html
+
+https://colorbrewer2.org
+https://hclwizard.org/
+
+https://webaim.org/techniques/alttext/
+https://support.microsoft.com/en-us/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2
+
+
+https://r-spatial.org/book/08-Plotting.html
+https://geocompr.robinlovelace.net/adv-map.html
+https://walker-data.com/census-r/mapping-census-data-with-r.html
+https://rspatial.org/terra/index.html
+https://rspatial.org/terra/rosu/index.html
+https://riatelab.github.io/mapsf/
+https://riatelab.github.io/bertin/
+https://observablehq.com/@neocartocnrs/hello-bertin-js
+https://observablehq.com/collection/@neocartocnrs/bertin
+https://observablehq.com/@neocartocnrs/bertin-js-projections?collection=@neocartocnrs/bertin
+https://observablehq.com/collection/@d3/d3-geo-projection
+
+
+
 
 ## Spatio-temporal cubes, juridicial change
 
