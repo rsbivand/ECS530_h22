@@ -33,7 +33,9 @@ All the material presented here, to the extent it is original, is available unde
 
 11:30-12:00 Discussion
 
-13:00-14:15 Visualization and mapping with coordinate reference systems (exercises)
+13:00-14:00 Visualization and mapping with coordinate reference systems (exercises)
+
+14:00-14:15 #30DayMapChallenge https://30daymapchallenge.com/ https://fosstodon.org/web/tags/30DayMapChallenge https://twitter.com/search?q=%252330DayMapChallenge
 
 14:30-15:30 Spatio-temporal cubes, juridicial change
 
@@ -83,9 +85,19 @@ Depending on the number of participants wishing to present project outlines (abo
 
 12:30-15:30 Presentation of up to six project outlines, with 20 min. break.
 
-15:30:16:00 Round-up and feedback
+15:30-16:00 Round-up and feedback
 
 ## Introduction and set-up
+
+Auditorium M is larger than the room initially assigned, but has been upgraded recently. We'll find out practically how to get into this room; in principle all teaching rooms are access-card-only, so those of us with will need to help others; perhaps Canvas messages could be used to contact others if you get stuck outside a locked door (the Canvas app can be set up to issue notifications when a message is received). Because anyone with a card can access the room, the room cannot be physically locked, so either we can agree among ourselves on who might stay in the room for each of two halves of the lunch break to avoid rigging down laptops. We'll have to learn how to live with this, upgraded rooms have both positive and negative advantages.
+
+We can probably stay in one part of the room; as far as I understand, the active camera is that facing the front. Microphones need to be used to be heard when streaming is activated. The streaming times are set at 09:00-12:00 and 13:00-15:45 Monday to Thursday, and 09:00-12:00 and 12:30-16:00 on Friday. Streamed content should be available in the Panopto Video tab in Canvas. It is now only available to those registered on this course and logged in. Raw recordings will be published successively in the same place with little delay for those who are at an awkward time-zone offset. Subsequently, edited recordings cutting out periods with no relevant content will replace the raw recordings. The recordings should show a view of the front of the room, beamer content, and sound captured by microphones.
+
+Those who are not on-site will have to use Canvas messages to interact with us; not ideal but the video system has no two-way option. We are (at the time of writing) so close to on-site delivery, nothing has happened (so far) to force a reversion to hybrid, so delivery will be on-site plus streaming. Should anyone needing to present on Friday be hindered, we can fall back on a zoom session for everybody early the following week if the need arises.
+
+The local weather forecast may be found at https://www.yr.no/en/forecast/daily-table/1-92388/Norway/Vestland/Bergen/Sandviken. Since working in auditorium M may be a bit constricting, we may break out of the schedule if the sun comes out, and for example walk into town (or part of the way) from mid-afternoon to open up for more informal discussions. For those from outside Bergen, the 7-day public transport ticket is convenient, for example using the Skyss app https://www.skyss.no/en.
+
+Wifi internet is available throughout the NHH campus. If you already use *eduroam*, you may have been connected automatically through your home institution. If not, or if your eduroam connection does not work here, please consult https://www.nhh.no/en/about-nhh/it-support/it-support-for-guests/; unfortunately identity confirmation requires a Norwegian phone number, so please assist each other in getting online.
 
 
 ## Visualization and mapping with coordinate reference systems
