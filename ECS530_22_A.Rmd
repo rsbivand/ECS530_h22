@@ -37,24 +37,26 @@ All the material presented here, to the extent it is original, is available unde
 
 14:00-14:15 #30DayMapChallenge https://30daymapchallenge.com/ https://fosstodon.org/web/tags/30DayMapChallenge https://twitter.com/search?q=%252330DayMapChallenge
 
-14:30-15:30 Spatio-temporal cubes, juridicial change
+14:30-15:30 Finding systematic patterns in variable/geographic space
 
 ### Tuesday 15/11
 
-09:00-09:45 Spatio-temporal cubes, juridicial change (exercises)
+09:00-09:45 Jakub Nowosad (zoom) Q&A Finding systematic patterns in geographic space
 
-10:00-11:30 External libraries, links to GRASS GIS, landscape metrics, raster/terra
+10:00-11:00 Finding systematic patterns in variable/geographic space (exercises)
 
-11:30-12:00 Geodemographics
+11:00-12:00 External libraries, links to GRASS GIS, raster/terra
 
-13:00-14:30 Links to GIS, landscape metrics, raster/terra, geodemographics (exercises)
+13:00-13:30 Geodemographics
 
-14:45-15:45 Finding systematic patterns in variable/geographic space
+13:30-14:30 Links to GIS, raster/terra, geodemographics (exercises)
+
+14:45-15:45 Spatio-temporal cubes, juridicial change
 
 
 ### Wednesday 16/11
 
-09:00-10:00 Finding systematic patterns in variable/geographic space (exercises)
+09:00-10:00 Spatio-temporal cubes, juridicial change (exercises)
 
 10:15-11:15 Global and local spatial autocorrelation 
 
@@ -133,7 +135,12 @@ https://observablehq.com/collection/@d3/d3-geo-projection
 
 
 
-## Spatio-temporal cubes, juridicial change
+## Finding systematic patterns in variable/geographic space
 
+IALE talk, landscapemetrics https://cran.r-project.org/package=landscapemetrics https://www.youtube.com/watch?v=jtAxJ-S89qI
+
+OGH talk supercells https://cran.r-project.org/package=supercells https://cran.r-project.org/package=regional https://av.tib.eu/media/54880
+
+RGS-IBG talk motif https://cran.r-project.org/package=motif https://www.youtube.com/watch?v=CDgsgcvsg_Y
 
 

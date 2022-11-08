@@ -26,7 +26,7 @@ All the material presented here, to the extent it is original, is available unde
 
 ### Wednesday 16/11
 
-09:00-10:00 Finding systematic patterns in variable/geographic space (exercises)
+09:00-10:00 Spatio-temporal cubes, juridicial change (exercises)
 
 10:15-11:15 Global and local spatial autocorrelation 
 
