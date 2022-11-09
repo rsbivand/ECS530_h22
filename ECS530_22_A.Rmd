@@ -134,6 +134,76 @@ capabilities()
 grSoftVersion()
 ```
 
+Most of base graphics is vector graphics, but some innovations apply both to base and grid. The **gridBase** package permits base graphics elements, often created as `plot()` methods in contributed packages, to be placed in grid graphics displays.
+
+We can check the relative standing of **graphics** and **grid** from the CRAN package database, and add **lattice** and **ggplot2** (Suggests are typically in examples):
+
+```{r, echo = TRUE, cache=TRUE}
+db <- tools::CRAN_package_db()
+types <- c("Depends", "Imports", "Suggests")
+pkgs <- c("graphics", "grid", "lattice", "ggplot2")
+(tbl <- sapply(types, function(type) sapply(pkgs, 
+  function(pkg) length(db[grep(pkg, db[, type]), 1]))))
+class(tbl)
+```
+
+```{r}
+library(lattice)
+barchart(tbl, auto.key=TRUE, horizontal=FALSE)
+```
+
+The **grid** and **lattice** entered as Recommended in R 1.5.0 in April 2002, and **grid** became a base package in 1.8.0 in October 2003. Some changes were made in **grid** for R 3, but its structure remains very stable. The **gridBase** and **gridGraphics** packages provide functions for capturing the state of the current device drawn with base graphics tools. One reason for this is the unsolved problem of testing graphics output for identity, to ensure that the same commands for the same data give the same output; for `grid` objects this is feasible, but not for base graphics on interactive devices. Over and above the use of **grid** directly, the general-purpose packages **lattice** and **ggplot2** build on **grDevices** and **grid**. In addition, it is worth mentioning the **vcd** (visualizing categorical data) and **vcdExtra** packages and a recent book on http://ddar.datavis.ca/.
+
+We can combine `grob` from different sources
+
+```{r, echo = TRUE}
+b <- barchart(tbl, auto.key=TRUE,
+  horizontal=FALSE)
+x11()
+barplot(t(tbl), legend.text=TRUE,
+  args.legend=list(x="top", bty="n",
+  cex=0.8, y.intersp=3))
+gridGraphics::grid.echo()
+library(grid)
+g <- grid.grab()
+dev.off()
+grid.newpage()
+gridExtra::grid.arrange(g, b, ncol=2)
+```
+
+
+**grid** pushes viewports onto a stack, then pops them, see R Graphics and vignettes
+
+```{r, echo = TRUE}
+grid.rect(gp = gpar(lty = "dashed"))
+vp <- viewport(width = 0.5, height = 0.5)
+pushViewport(vp)
+grid.rect(gp = gpar(col = "grey"))
+grid.text("quarter of the page", y = 0.85)
+pushViewport(vp)
+grid.rect()
+grid.text("quarter of the\nprevious viewport")
+popViewport(2)
+```
+
+Just reading the `print` method for `ggplot` objects shows how close **grid** is under **ggplot2**.
+
+```{r, echo = TRUE}
+ggplot2:::print.ggplot
+```
+
+There are various lower and higher-level ways of combining graphical output: some are described in https://cran.r-project.org/web/packages/egg/vignettes/Ecosystem.html in the **egg** package
+
+```{r, echo = TRUE}
+df <- cbind(expand.grid(pkgs, types), n=c(tbl))
+library(ggplot2)
+gg <- ggplot(df, aes(x=Var1, y=n, fill=Var2)) + geom_col() + 
+  xlab("") + guides(fill=guide_legend(title="")) +
+  theme(legend.position="top")
+gg2 <- ggplotGrob(gg)
+t <- gridExtra::tableGrob(as.data.frame(tbl))
+gridExtra::grid.arrange(g, b, gg2, t, ncol=2, nrow=2)
+```
 
 
 
