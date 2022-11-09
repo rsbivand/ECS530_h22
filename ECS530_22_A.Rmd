@@ -104,21 +104,40 @@ Wifi internet is available throughout the NHH campus. If you already use *eduroa
 
 ## Visualization and mapping with coordinate reference systems
 
-niches, geodetics, cartographers, datavis
-
-https://priceonomics.com/how-william-cleveland-turned-data-visualization/
-
-http://www.gradaanwr.net/
-
-https://clauswilke.com/dataviz/
-https://clauswilke.com/dataviz/geospatial-data.html
-
-https://colorbrewer2.org
-https://hclwizard.org/
-
-https://webaim.org/techniques/alttext/
+Visualization is one of the key strengths of R. However, visualization involves many choices, and R offers such a wide range of choices that guidance is desirable. There are two major underlying techologies, base graphics and grid graphics, and several toolboxes built on these (trellis graphics and grammar of graphics on grid graphics), in addition to JavaScript widgets for interaction. In addition, much work has been done on the effective use of shapes and colours https://colorbrewer2.org, https://hclwizard.org/. See also the most recent AltText movement: https://webaim.org/techniques/alttext/
 https://support.microsoft.com/en-us/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2
 
+We can distinguish between presentation graphics and analytical graphics. Presentation graphics are intended for others and are completed (even if interactive). Analytical graphics may evolve into presentation graphics, but their main purpose is to visualize the data being analysed (see Antony Unwin's book and (http://www.gradaanwr.net/), and Claus Wilke's https://clauswilke.com/dataviz/. Many of the researchers who have developed approaches to visualization have been involved with Bell Labs, where S came from https://priceonomics.com/how-william-cleveland-turned-data-visualization/.
+
+As installed, R provides two graphics approaches, one known as base graphics, the other trellis or lattice graphics. Most types of visualization are available for both, but lattice graphics were conceived to handle conditioning, for example to generate matching plots for different categories. Many of these were based on the data-ink ratio, favouring graphics with little or no extraneous detail (Edward Tufte) - see Lukasz Piwek's blog http://motioninsocial.com/tufte/. There are other approaches, such as Leland Wilkinson's Grammar of Graphics, implemented in Hadley Wickham's **ggplot2** package, which we will also be using here.
+
+So there are presentation and analytical graphics, and there can be a number of approaches to how best to communicate information in either of those modes. R can create excellent presentation graphics, or provide input for graphics designers to improve for print or other media. What we need now are the most relevant simple analytical graphics for the kinds of data we use.
+
+Histograms and many other kinds of chart require user choices about the number of bins to be used and bin/class intervals. This may also be termed quantization: the division of part of the real line on which we have measured a variable into intervals. This can also apply to combined categories if they are recoded to reduce the number of alternatives to be displayed. Class intervals are much used in thematic cartography, and I'm the author of the **classInt** package.
+
+Class intervals can be chosen in many ways, and some have been collected for convenience in the **classInt** package. The first problem is to assign class boundaries to values in a single dimension, for which many classification techniques may be used, including pretty, quantile, natural breaks among others, or even simple fixed values. From there, the intervals can be used to generate colours from a colour palette, using the very nice `colorRampPalette()` function. Because there are potentially many alternative class memberships even for a given number of classes, choosing a communicative set matters.
+
+We may choose the number of intervals ourselves arbitrarily or after examination of the data, or use provided functions, such as `nclass.Sturges()`, `nclass.scott()` or `nclass.FD()`. In `hist()`, `nclass.Sturges()` is used by default. We can also split on `sign()`, but handling diverging intervals often involves more work.
+
+The default intervals for bins in `hist()` are `pretty(range(x), n = breaks, min.n = 1)`, where `breaks <- nclass.Sturges(x)`.  The function computes a sequence of about n+1 equally spaced ‘round’ values which cover the range of the values in x. The values are chosen like values of coins or banknotes (1, 2, 5, etc.).
+
+If we use the `classIntervals()` function from **classInt**, we can pass through arguments to the function called through `style=`, and note that `n` will not necessarily be the number of output classes. By default, `intervalClosure=` is `"left"`, so `[-30, -20)` means numbers greater than and equal to (>=) -30 and less than (<) -20; `[10, 20]` is numbers >= 10 and <= 20.
+
+The **tmap** https://r-tmap.github.io/tmap/ package provides cartographically informed, grammar of graphics (gg) based functionality now, like **ggplot2** using **grid** graphics. John McIntosh tried with **ggplot2** https://www.johnmackintosh.net/blog/2017-08-22-simply-mapping/, with quite nice results. I suggested he look at **tmap**, and things got better https://www.johnmackintosh.net/blog/2017-09-01-easy-maps-with-tmap/, because **tmap** can switch between interactive and static viewing. **tmap** also provides direct access to **classInt** class intervals. Like the `sf::plot()` method, **tmap** plotting can use **classInt** internally and accepts a palette (try looking at `tmaptools::palette_explorer()` for ColorBrewer palettes).
+
+The underlying logic of conditioned graphics is that multiple displays (windows, panes) use the same scales and representational elements for comparison. Using the same scales and representational elements for comparison can be done manually, imposing the same scales, colours and shapes in each plot and laying the plots out in a grid. Trellis graphics automated this in S, and **lattice** provides similar but enhanced facilities in R with a formula interface. **ggplot2** and other packages also provide similar functionalities.
+
+In early R, all the graphics functionality was in **base**; **graphics** was split out of **base** in 1.9.0 (2004-04-12), and **grDevices** in 2.0.0 (2004-10-04). When R starts now, the **graphics** and **grDevices** packages are loaded and attached, ready for use. **graphics** provides the user-level graphical functions and methods, especially the most used `plot()` methods that many other packages extend. **grDevices** provides lower-level interfaces to graphics devices, some of which create files and others display windows. The `capabilities()` function shows what R itself can offer, including non-graphics capabilities, and we can also check the versions of external software used:
+
+```{r, echo = TRUE}
+capabilities()
+grSoftVersion()
+```
+
+
+
+
+https://clauswilke.com/dataviz/geospatial-data.html
 
 https://r-spatial.org/book/08-Plotting.html
 https://geocompr.robinlovelace.net/adv-map.html
