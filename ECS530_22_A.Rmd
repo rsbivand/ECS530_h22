@@ -91,7 +91,7 @@ Depending on the number of participants wishing to present project outlines (abo
 
 ## Introduction and set-up
 
-Auditorium M is larger than the room initially assigned, but has been upgraded recently. We'll find out practically how to get into this room; in principle all teaching rooms are access-card-only, so those of us with will need to help others; perhaps Canvas messages could be used to contact others if you get stuck outside a locked door (the Canvas app can be set up to issue notifications when a message is received). Because anyone with a card can access the room, the room cannot be physically locked, so either we can agree among ourselves on who might stay in the room for each of two halves of the lunch break to avoid rigging down laptops. We'll have to learn how to live with this, upgraded rooms have both positive and negative advantages.
+Auditorium M is larger than the room initially assigned, but has been upgraded recently. We'll find out practically how to get into this room (Door B, up stairs, turn left); in principle all teaching rooms are access-card-only, so those of us with will need to help others; perhaps Canvas messages could be used to contact others if you get stuck outside a locked door (the Canvas app can be set up to issue notifications when a message is received). Because anyone with a card can access the room, the room cannot be physically locked, so either we can agree among ourselves on who might stay in the room for each of two halves of the lunch break to avoid rigging down laptops. We'll have to learn how to live with this, upgraded rooms have both positive and negative advantages.
 
 We can probably stay in one part of the room; as far as I understand, the active camera is that facing the front. Microphones need to be used to be heard when streaming is activated. The streaming times are set at 09:00-12:00 and 13:00-15:45 Monday to Thursday, and 09:00-12:00 and 12:30-16:00 on Friday. Streamed content should be available in the Panopto Video tab in Canvas. It is now only available to those registered on this course and logged in. Raw recordings will be published successively in the same place with little delay for those who are at an awkward time-zone offset. Subsequently, edited recordings cutting out periods with no relevant content will replace the raw recordings. The recordings should show a view of the front of the room, beamer content, and sound captured by microphones.
 
@@ -104,7 +104,7 @@ Wifi internet is available throughout the NHH campus. If you already use *eduroa
 
 ## Visualization and mapping with coordinate reference systems
 
-Visualization is one of the key strengths of R. However, visualization involves many choices, and R offers such a wide range of choices that guidance is desirable. There are two major underlying techologies, base graphics and grid graphics, and several toolboxes built on these (trellis graphics and grammar of graphics on grid graphics), in addition to JavaScript widgets for interaction. In addition, much work has been done on the effective use of shapes and colours https://colorbrewer2.org, https://hclwizard.org/. See also the most recent AltText movement: https://webaim.org/techniques/alttext/
+Visualization is one of the key strengths of R. However, visualization involves many choices, and R offers such a wide range of choices that guidance is desirable. There are two major underlying techologies, base graphics and grid graphics, and several toolboxes built on these (trellis graphics and grammar of graphics on grid graphics), in addition to JavaScript widgets for interaction. In addition, much work has been done on the effective use of shapes and colours https://colorbrewer2.org, https://hclwizard.org/ (and https://www.nature.com/articles/nmeth.1618). See also the most recent AltText movement: https://webaim.org/techniques/alttext/
 https://support.microsoft.com/en-us/office/everything-you-need-to-know-to-write-effective-alt-text-df98f884-ca3d-456c-807b-1a1fa82f5dc2
 
 We can distinguish between presentation graphics and analytical graphics. Presentation graphics are intended for others and are completed (even if interactive). Analytical graphics may evolve into presentation graphics, but their main purpose is to visualize the data being analysed (see Antony Unwin's book and (http://www.gradaanwr.net/), and Claus Wilke's https://clauswilke.com/dataviz/. Many of the researchers who have developed approaches to visualization have been involved with Bell Labs, where S came from https://priceonomics.com/how-william-cleveland-turned-data-visualization/.
@@ -123,7 +123,7 @@ The default intervals for bins in `hist()` are `pretty(range(x), n = breaks, min
 
 If we use the `classIntervals()` function from **classInt**, we can pass through arguments to the function called through `style=`, and note that `n` will not necessarily be the number of output classes. By default, `intervalClosure=` is `"left"`, so `[-30, -20)` means numbers greater than and equal to (>=) -30 and less than (<) -20; `[10, 20]` is numbers >= 10 and <= 20.
 
-The **tmap** https://r-tmap.github.io/tmap/ package provides cartographically informed, grammar of graphics (gg) based functionality now, like **ggplot2** using **grid** graphics. John McIntosh tried with **ggplot2** https://www.johnmackintosh.net/blog/2017-08-22-simply-mapping/, with quite nice results. I suggested he look at **tmap**, and things got better https://www.johnmackintosh.net/blog/2017-09-01-easy-maps-with-tmap/, because **tmap** can switch between interactive and static viewing. **tmap** also provides direct access to **classInt** class intervals. Like the `sf::plot()` method, **tmap** plotting can use **classInt** internally and accepts a palette (try looking at `tmaptools::palette_explorer()` for ColorBrewer palettes).
+The **tmap** https://r-tmap.github.io/tmap/ package provides cartographically informed, grammar of graphics (gg) based functionality now, like **ggplot2** using **grid** graphics. John McIntosh tried with **ggplot2** https://www.johnmackintosh.net/blog/2017-08-22-simply-mapping/, with quite nice results. I suggested he look at **tmap**, and things got better https://www.johnmackintosh.net/blog/2017-09-01-easy-maps-with-tmap/, because **tmap** can switch between interactive and static viewing. **tmap** also provides direct access to **classInt** class intervals. Like the `sf::plot()` method, **tmap** plotting can use **classInt** internally and accepts a palette (try looking at `tmaptools::palette_explorer()` for ColorBrewer palettes, or at the **rcartocolor** package).
 
 The underlying logic of conditioned graphics is that multiple displays (windows, panes) use the same scales and representational elements for comparison. Using the same scales and representational elements for comparison can be done manually, imposing the same scales, colours and shapes in each plot and laying the plots out in a grid. Trellis graphics automated this in S, and **lattice** provides similar but enhanced facilities in R with a formula interface. **ggplot2** and other packages also provide similar functionalities.
 
@@ -204,22 +204,110 @@ gg2 <- ggplotGrob(gg)
 t <- gridExtra::tableGrob(as.data.frame(tbl))
 gridExtra::grid.arrange(g, b, gg2, t, ncol=2, nrow=2)
 ```
+### Coordinate reference systems 
+
+https://geocompr.robinlovelace.net/spatial-class.html#crs-intro
+https://geocompr.robinlovelace.net/reproj-geo-data.html
+https://clauswilke.com/dataviz/geospatial-data.html#projections
+https://r-spatial.org/book/02-Spaces.html
+https://riatelab.github.io/bertin/
+https://observablehq.com/@neocartocnrs/hello-bertin-js
+https://observablehq.com/collection/@neocartocnrs/bertin
+https://observablehq.com/@neocartocnrs/bertin-js-projections?collection=@neocartocnrs/bertin
+https://observablehq.com/collection/@d3/d3-geo-projection
+
+
+### Mapping
+
+```{r, eval=TRUE}
+library(sf)
+```
+
+
+```{r, eval=TRUE}
+library(sf)
+chicago_tracts <- st_read("chicago_tracts.gpkg")
+```
+We'll use the **tmap** package with class interval styles from the **classInt** package:
+
+```{r, eval=TRUE}
+library(tmap)
+tm_shape(chicago_tracts) + tm_fill("med_inc_cv", style="fisher", n=7, title="Coefficient of Variation")
+```
+
+In ESRI documentation, CV thresholds of 12 and 40 percent are proposed for the transformed reported MOE values:  https://doc.arcgis.com/en/esri-demographics/data/acs.htm. We'll create a classified variable (ordered factor):
+
+```{r, eval=TRUE}
+chicago_tracts$mi_cv_esri <- cut(chicago_tracts$med_inc_cv, c(0, 0.12, 0.40, Inf), labels=c("High", "Medium", "Low"), right=TRUE, include.lowest=TRUE, ordered_result=TRUE)
+table(chicago_tracts$mi_cv_esri)
+```
+
+and map it:
+
+```{r, eval=TRUE}
+tm_shape(chicago_tracts) + tm_fill("mi_cv_esri", title="Reliability")
+```
+
+As the Low reliability tracts are small in size, the `"view"` mode for interactive mapping may help:
+
+```{r, eval=TRUE}
+tmap_mode("view")
+tm_shape(chicago_tracts) + tm_fill("mi_cv_esri", title="Reliability")
+tmap_mode("plot")
+```
+
+Or equivalently using **mapview**, plotting the CV values rather than the ordered factor, which is not yet well-supported:
+
+```{r, eval=FALSE}
+library(mapview)
+mapviewOptions(fgb = FALSE)
+mapview(chicago_tracts[,"med_inc_cv"], layer.name="Coefficient of Variation")
+```
+
+
+
+The **RColorBrewer** package gives by permission access to the ColorBrewer palettes accesible from the [ColorBrewer](http://colorbrewer2.org)
+website. Note that ColorBrewer limits the number of classes tightly, only 3--9 sequential classes
+
+We can also display all the ColorBrewer palettes:
+
+```{r, echo=TRUE}
+library(RColorBrewer)
+display.brewer.all()
+```
+
+Try exploring alternative class interval definitions and palettes, maybe also visiting http://hclwizard.org/ and its `hclwizard()` Shiny app, returning a palette generating function on clicking the "Return to R" button:
+
+```{r, echo=TRUE}
+library(colorspace)
+hcl_palettes("sequential (single-hue)", n = 7, plot = TRUE)
+```
+
+```{r, echo=TRUE, eval=FALSE}
+pal <- hclwizard()
+pal(6)
+```
+
+The end of rainbow discussion is informative:
+
+```{r, echo=TRUE}
+wheel <- function(col, radius = 1, ...)
+  pie(rep(1, length(col)), col = col, radius = radius, ...) 
+opar <- par(mfrow=c(1,2))
+wheel(rainbow_hcl(12))
+wheel(rainbow(12))
+par(opar)
+```
 
 
 
 https://clauswilke.com/dataviz/geospatial-data.html
-
 https://r-spatial.org/book/08-Plotting.html
 https://geocompr.robinlovelace.net/adv-map.html
 https://walker-data.com/census-r/mapping-census-data-with-r.html
 https://rspatial.org/terra/index.html
 https://rspatial.org/terra/rosu/index.html
 https://riatelab.github.io/mapsf/
-https://riatelab.github.io/bertin/
-https://observablehq.com/@neocartocnrs/hello-bertin-js
-https://observablehq.com/collection/@neocartocnrs/bertin
-https://observablehq.com/@neocartocnrs/bertin-js-projections?collection=@neocartocnrs/bertin
-https://observablehq.com/collection/@d3/d3-geo-projection
 
 
 
