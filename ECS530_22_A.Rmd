@@ -102,6 +102,193 @@ The local weather forecast may be found at https://www.yr.no/en/forecast/daily-t
 Wifi internet is available throughout the NHH campus. If you already use *eduroam*, you may have been connected automatically through your home institution. If not, or if your eduroam connection does not work here, please consult https://www.nhh.no/en/about-nhh/it-support/it-support-for-guests/; unfortunately identity confirmation requires a Norwegian phone number, so please assist each other in getting online.
 
 
+## Self-help in R
+
+The main reason to indicate here how one may learn autonomously is because things change, and although efforts are made to inform about  impending changes and enhancements, users are usually pretty much alone in exploring them. So encouraging confidence in searching for and using information matters.
+
+### Help and examples
+
+- In RStudio, the Help tab in the lower right pane (default position) gives access to the R manuals and to the installed packages help pages through the Packages link under Reference
+
+- In R itself, help pages are available in HTML (browser) and text form; `help.start()` uses the default browser to display the Manuals, Reference and Miscellaneous Material sections in RStudio's home help tab
+
+- The search engine can be used to locate help pages, but is not great if many packages are installed, as no indices are stored 
+
+- The help system needs to be learned in order to provide the user with ways of progressing without wasting too much time
+
+### Base help system
+
+- The base help system does not tell you how to use R as a system, about packages not installed on your machine, or about R as a community
+
+- It does provide information about functions, methods and (some) classes in base R and in contributed packages installed on your machine
+
+- We'll cover these first, then go on to look at vignettes, and task views
+
+- There are different requirements with regard to help systems - in R, the help pages of base R are expected to be accurate although terse
+
+- It has become an increasing problem (especially when package authors use **roxygen** to create help pages) that help pages are more terse than necessary; in which case interested users have to fall back on vignettes or ancillary online documentation
+
+### Help pages
+
+- Each help page provides a short description of the functions, methods or classes it covers; some pages cover more than one such
+
+- Help pages are grouped by package, so that the browser-based system is not easy to browse if you do not know which package a function belongs to
+
+- The usage of the function is shown explicitly, including any defaults for arguments to functions or methods
+
+- Each argument is described, showing names and types; in addition details of the description are given, together with the value returned
+
+### Interactive use of help pages
+
+- Rather than starting from the packages hierarchy of help pages, users most often use the `help` function
+
+- The function takes the name of of the function about which we need help, the name may be in quotation marks; class names contain a hyphen and must be quoted
+
+- Instead of using say `help(help)`, we can shorten to the question mark operator: `?help`
+
+- Occasionally, several packages offer different functions with the same name, and we may be offered a choice; we can disambiguate by putting the package name and two colons before the function name
+
+### Function arguments
+
+- In the usage section, function arguments are shown by name and order; the `args` function returns information
+
+- In general, if arguments are given by name, the order is arbitrary, but if names are not used at least sometimes, order matters
+
+- Some arguments do not have default values and are probably required, although some are guessed if missing
+
+- Being explicit about the names of arguments and the values they take is helpful in scripting and reproducible research
+
+- The ellipsis `...` indicates that the function itself examines objects passed to see what to do
+
+### Tooltips and completion
+
+- The regular R console does not provide tooltips, that is a bubble first offering alternative function or object names as you type, then lists of argument names
+
+- RStudio, like many IDEs, does provide this, controlled by Tools -> Global options -> Code -> Completion (by default it is operative)
+
+- This may be helpful or not, depending on your style of working; if you find it helpful, fine, if not, you can make it less invasive under Global options
+
+- Other IDE have also provided this facility, which builds directly on the usage sections of help pages of functions in installed packages
+
+### Coherence code/documentation
+
+- Base R has a set of checks and tests that ensure coherence between the code itself and the usage sections in help pages
+
+- These mechanisms are used in checking contributed packages before they are released through the the archive network; the description of arguments on help pages must match the function definition
+
+- It is also possible to generate help pages documenting functions automatically, for example using the **roxygen2** package
+
+- It is important to know that we can rely on this coherence
+
+
+### Returned values
+
+- The objects returned by functions are also documented on help pages, but the coherence of the description with reality is harder to check
+
+- This means that use of `str` or other functions or methods may be helpful when we want to look inside the returned object
+
+- The form taken by returned values will often also vary, depending on the arguments given
+
+- Most help pages address this issue not by writing more about the returned values, but by using the examples section to highlight points of potential importance for the user
+
+### Examples
+
+- Reading the examples section on the help page is often enlightening, but we do not need to copy and paste
+
+- The `example` function runs those parts of the code in the examples section of a function that are not tagged don't run - this can be overridden, but may involve meeting conditions not met on your machine
+
+- This code is run nightly on CRAN servers on multiple operating systems and using released, patched and development versions of R, so checking both packages and the three versions of R
+
+- Some examples use data given verbatim, but many use built-in data sets; most packages also provide data sets to use for running examples
+
+### Built-in data sets
+
+- This means that the examples and the built-in data sets are a most significant resource for learning how to solve problems with R
+
+- Very often, one recognizes classic textbook data sets from the history of applied statistics; contemporary text book authors often publish collections of data sets as packages on CRAN
+
+- The built-in data sets also have help pages, describing their representation as R objects, and their licence and copyright status
+
+- These help pages also often include an examples section showing some of the analyses that may be carried out using them
+
+- One approach that typically works well when you have a data set of your own, but are unsure how to proceed, is to find a built-in data set that resembles the real one, and play with that first
+
+- The built-in data sets are often quite small, and if linked to text books, they are well described there as well as in the help pages
+
+- By definition, the built-in data sets do not have to be imported into R, as they are almost always stored as files of R objects
+
+- In some cases, these data sets are stored in external file formats, most often to show how to read those formats
+
+- The built-in data sets in the base **datasets** package are in the search path, but data sets in other packages should be loaded using the `data()` function:
+
+```{r, echo = TRUE}
+str(Titanic)
+```
+
+```{r, echo = TRUE}
+library(MASS)
+data(deaths)
+str(deaths)
+```
+
+- The **spData** and off-CRAN **spDataLarge** packages contain many standard geospatial datasets used in examples in many packages.
+
+### Vignettes
+
+- At about the time that literate programming arrived in R with `Sweave` and `Stangle` - we mostly use **knitr** now - the idea arose of supplementing package documentation with example workflows
+
+- Vignettes are PDF documents with accompanying runnable R code that describe how to carry out particular sequences of operations
+
+- The RStudio packages help tab package index file shows user guides, package vignettes and other documentation
+
+- The `vignette()` function can be used to list vignettes by installed package, and to open the chosen vignette in a PDF reader
+
+- A very typical way of using vignettes on a machine with enough screen space is to read the document and run the code from the R file at the same time
+
+- Assign the output of `vignette` to an object; the `print` method shows the PDF or HTML, the `edit` method gives direct access to the underlying code for copy and paste
+
+- The help system in RStudio provides equivalent access to vignette documents and code
+
+- Papers about R contributed packages published in the Journal of Statistical Software and the R Journal are often constructed in this way too
+
+
+### Task views
+
+- CRAN task views https://cloud.r-project.org/web/views were introduced to try to provide some subject area guidance
+
+- They remain terse, and struggle to keep up, but are still worth reviewing
+
+- Note that those working in different subject areas often see things rather differently, leading to subject specific treatment of intrinsically similar themes
+
+
+### R communities
+
+- The R community has become a number of linked communities rather than a coherent and hierarchical whole
+
+- As in many open source projects, the R project is more basaar than cathedral; think of niches in ecosystems with differing local optima in contrast to a master plan
+
+- One style is based on mailing lists, in which an issue raised by an original poster is resolved later in that thread
+
+- Another style is to use online fora, such as StackOverflow, which you need to visit rather than receiving messages in your inbox
+
+- New aggregated blog topics are linked to a Twitter account, so if you want, you too can be bombarded by notifications
+
+- Twitter hashtags #rstats and #rspatial are relevant; the R Foundation is also present on fosstodon.org
+
+- These are also a potential source of project ideas, especially because some claims should be challenged
+
+
+### R Consortium
+
+- R started as a teaching tool for applied statistics, but this community model has been complemented by others
+
+- R is now widely used in business, public administration and voluntary organizations for data analysis and visualization
+
+- The [R Consortium](https://www.r-consortium.org/) was created in 2015 as a vehicle for companies with relationships to R
+
+- R itself remains under the control of the [R Foundation](https://www.r-project.org/foundation/), which is still mostly academic in flavour
+
+
 ## Visualization and mapping with coordinate reference systems
 
 Visualization is one of the key strengths of R. However, visualization involves many choices, and R offers such a wide range of choices that guidance is desirable. There are two major underlying techologies, base graphics and grid graphics, and several toolboxes built on these (trellis graphics and grammar of graphics on grid graphics), in addition to JavaScript widgets for interaction. In addition, much work has been done on the effective use of shapes and colours https://colorbrewer2.org, https://hclwizard.org/ (and https://www.nature.com/articles/nmeth.1618). See also the most recent AltText movement: https://webaim.org/techniques/alttext/
@@ -204,12 +391,20 @@ gg2 <- ggplotGrob(gg)
 t <- gridExtra::tableGrob(as.data.frame(tbl))
 gridExtra::grid.arrange(g, b, gg2, t, ncol=2, nrow=2)
 ```
+
 ### Coordinate reference systems 
+
+Current useful sources are:
 
 https://geocompr.robinlovelace.net/spatial-class.html#crs-intro
 https://geocompr.robinlovelace.net/reproj-geo-data.html
+
 https://clauswilke.com/dataviz/geospatial-data.html#projections
+
 https://r-spatial.org/book/02-Spaces.html
+
+Some presentation projections are not available through the standard GDAL/PROJ ecosystem, but can be found in javascript libraries:
+
 https://riatelab.github.io/bertin/
 https://observablehq.com/@neocartocnrs/hello-bertin-js
 https://observablehq.com/collection/@neocartocnrs/bertin
@@ -299,20 +494,28 @@ wheel(rainbow(12))
 par(opar)
 ```
 
-
+More discussions of useful mapping examples can be found in:
 
 https://clauswilke.com/dataviz/geospatial-data.html
+
 https://r-spatial.org/book/08-Plotting.html
+
 https://geocompr.robinlovelace.net/adv-map.html
+
 https://walker-data.com/census-r/mapping-census-data-with-r.html
+
 https://rspatial.org/terra/index.html
+
 https://rspatial.org/terra/rosu/index.html
+
 https://riatelab.github.io/mapsf/
 
 
 
 
 ## Finding systematic patterns in variable/geographic space
+
+These are the three talks I've already suggested you review for pattern-finding raster/GIS-style, together with the package links:
 
 IALE talk, landscapemetrics https://cran.r-project.org/package=landscapemetrics https://www.youtube.com/watch?v=jtAxJ-S89qI
 
@@ -321,3 +524,11 @@ OGH talk supercells https://cran.r-project.org/package=supercells https://cran.r
 RGS-IBG talk motif https://cran.r-project.org/package=motif https://www.youtube.com/watch?v=CDgsgcvsg_Y
 
 
+Over and above these, I suggest SKATER `spdep::skater()`, also implemented as `rgeoda::skater()`. 
+
+Beyond these, please refer to local measures of spatial association or local spatial autocorrelation, and to other hotspot measures in the spatial epidemiology literature:
+
+https://cran.r-project.org/package=DCluster
+https://cran.r-project.org/package=DClusterm
+
+https://cran.r-project.org/package=rflexscan
