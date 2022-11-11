@@ -7,6 +7,11 @@ output:
 theme: united
 ---
 
+### Course information (10 November)
+
+I have published a draft version of Monday's talks: https://rsbivand.github.io/ECS530_h22/ECS530_22_A.html; It begins with a draft schedule, also publshed in Canvas. It is not as complete as I would have wished, but I felt it better to publish than to wait until i return to better health.
+
+
 ### Room change (3 November)
 
 We will be working in aud. M, not aud. C as previously announced. Aud. C is being upgraded 14-18 November, so we'll use aud. M which has already been upgraded, but is a little larger. Smaller classrooms are being used at this time for examinations (quiet in corridors appreciated).
