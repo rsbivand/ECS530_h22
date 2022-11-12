@@ -525,8 +525,6 @@ and can be round-tripped:
 
 ### `"RasterLayer"`
 
-*updated 2022-10-12 following publication of* **raster** *3.6-3 on CRAN.*
-
 From version 3.6-3 the **raster** package [@raster] uses **terra** for all GDAL operations. Because of this, coercing a `"SpatRaster"` object to a `"RasterLayer"` object is simple:
 
 ```{r}
@@ -763,13 +761,21 @@ https://grass.osgeo.org/grass82/manuals/r.li.html describes the `r.li` toolset i
 
 Could something from openlandmap.org be used as an example? https://openlandmap.org/#/?base=Stamen%20(OpenStreetMap)&center=60.4125,5.1477&zoom=10.5&opacity=40&layer=lcv_land.cover_esacci.lc.l4_c&time=1992
 
+Files lcv_land.cover_esacci.lc.l4_c.csv and bergen_LC_1_24.tif.
+`gdal_translate -projwin 4.74 60.60 5.58 60.30 scratch/ESACCI-LC-L4-LCCS-Map-300m-P1Y-1992_2015-v2.0.7.tif bergen_LC_1_24.tif`
 
 
-## Spatio-temporal cubes, juridicial change
+## Spatio-temporal cubes
 
+https://r-spatial.org/book/06-Cubes.html
+https://r-spatial.org/book/09-Large.html
+https://cran.r-project.org/package=stars
+https://cran.r-project.org/package=starsExtra
+https://cran.r-project.org/package=gdalcubes
+https://cran.r-project.org/package=openeo
+https://cran.r-project.org/package=sits
 
-
-
+## Juridicial (boundary) changes
 
 https://cran.r-project.org/package=areal
 https://r-spatial.github.io/sf/reference/interpolate_aw.html
@@ -777,3 +783,6 @@ https://r-spatial.github.io/sf/reference/interpolate_aw.html
 https://cran.r-project.org/view=OfficialStatistics
 https://cran.r-project.org/package=geoSAE
 https://cran.r-project.org/package=rsae
+
+https://cran.r-project.org/package=redist
+https://cran.r-project.org/package=geomander
