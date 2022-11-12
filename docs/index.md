@@ -7,6 +7,10 @@ output:
 theme: united
 ---
 
+### Course information (12 November)
+
+I have published a draft version of Tuesday's talks: https://rsbivand.github.io/ECS530_h22/ECS530_22_B.html. Data etc. can be found at https://github.com/rsbivand/ECS530_h22.
+
 ### Course information (10 November)
 
 I have published a draft version of Monday's talks: https://rsbivand.github.io/ECS530_h22/ECS530_22_A.html; It begins with a draft schedule, also publshed in Canvas. It is not as complete as I would have wished, but I felt it better to publish than to wait until i return to better health.

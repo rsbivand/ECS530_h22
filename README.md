@@ -9,6 +9,8 @@ Three short "flipped" two-hour sessions were held Tuesdays 09:00-12:00 CEST Sept
 
 ## Plan for week 14-18 November 2022
 
+Data etc. download from https://github.com/rsbivand/ECS530_h22.
+
 ### Monday 14/11
 
 09:00-09:45 Introduction and set-up
