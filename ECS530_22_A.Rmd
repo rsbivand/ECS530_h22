@@ -528,6 +528,9 @@ RGS-IBG talk motif https://cran.r-project.org/package=motif https://www.youtube.
 
 Over and above these, I suggest SKATER `spdep::skater()`, also implemented as `rgeoda::skater()`. 
 
+https://geodacenter.github.io/documentation.html contains aspatial and spatial clustering approaches. See also https://cran.r-project.org/view=Cluster.
+
+
 Beyond these, please refer to local measures of spatial association or local spatial autocorrelation, and to other hotspot measures in the spatial epidemiology literature:
 
 https://cran.r-project.org/package=DCluster
