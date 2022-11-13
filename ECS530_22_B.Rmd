@@ -768,7 +768,9 @@ Files lcv_land.cover_esacci.lc.l4_c.csv and bergen_LC_1_24.tif.
 ## Spatio-temporal cubes
 
 https://r-spatial.org/book/06-Cubes.html
+https://edzer.github.io/sdsr_exercises/06.html
 https://r-spatial.org/book/09-Large.html
+https://edzer.github.io/sdsr_exercises/09.html
 https://cran.r-project.org/package=stars
 https://cran.r-project.org/package=starsExtra
 https://cran.r-project.org/package=gdalcubes

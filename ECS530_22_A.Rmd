@@ -402,6 +402,7 @@ https://geocompr.robinlovelace.net/reproj-geo-data.html
 https://clauswilke.com/dataviz/geospatial-data.html#projections
 
 https://r-spatial.org/book/02-Spaces.html
+https://edzer.github.io/sdsr_exercises/02.html
 
 Some presentation projections are not available through the standard GDAL/PROJ ecosystem, but can be found in javascript libraries:
 
@@ -499,6 +500,7 @@ More discussions of useful mapping examples can be found in:
 https://clauswilke.com/dataviz/geospatial-data.html
 
 https://r-spatial.org/book/08-Plotting.html
+https://edzer.github.io/sdsr_exercises/08.html
 
 https://geocompr.robinlovelace.net/adv-map.html
 

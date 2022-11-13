@@ -864,14 +864,14 @@ file.info(GRASS_INSTALLATION)$isdir[1]</code></pre>
 <p>We also need a place to put the temporary GRASS location:</p>
 <pre class="r"><code>td &lt;- tempdir()
 td</code></pre>
-<pre><code>## [1] &quot;/tmp/RtmpDQSpZJ&quot;</code></pre>
+<pre><code>## [1] &quot;/tmp/Rtmp4zrC1m&quot;</code></pre>
 <p>Here we need the three objects we have already created, and also set <code>override=TRUE</code>, as this document may be run many times. <code>initGRASS()</code> looks for an environment variable that GRASS sessions set (<code>GISRC</code>) pointing to a file of GRASS environment variables. Real GRASS sessions remove it on exit, but this interface does not (yet) provide for its removal, hence the need here to override.</p>
 <p>With <strong>rgrass</strong> and using a <code>&quot;SpatRaster&quot;</code> object <code>bbo_r</code> to set up the GRASS location, we can set the projection, extent and resolution much more easily than in previous versions of the interface:</p>
 <pre class="r"><code>soho &lt;- initGRASS(gisBase=GRASS_INSTALLATION, home=td, SG=bbo_r, override=TRUE)
 soho</code></pre>
-<pre><code>## gisdbase    /tmp/RtmpDQSpZJ 
-## location    filed433423eb9ac 
-## mapset      filed4336d3600f6 
+<pre><code>## gisdbase    /tmp/Rtmp4zrC1m 
+## location    filedf9d77992887 
+## mapset      filedf9d3b75e0b4 
 ## rows        858 
 ## columns     918 
 ## north       181415.9 
@@ -923,23 +923,23 @@ soho</code></pre>
 <pre class="r"><code>fl &lt;- c(&quot;overwrite&quot;, &quot;quiet&quot;)
 write_VECT(bbo, vname=&quot;bbo&quot;, flags=fl)</code></pre>
 <pre><code>## Warning in x@ptr$write(filename, layer, filetype, insert[1], overwrite[1], :
-## GDAL Message 6: dataset /tmp/RtmpDQSpZJ/filed4335b4fd549.gpkg does not support
+## GDAL Message 6: dataset /tmp/Rtmp4zrC1m/filedf9d652087b7.gpkg does not support
 ## layer creation option ENCODING</code></pre>
 <pre class="r"><code>write_VECT(buildings[,1], vname=&quot;buildings&quot;, flags=fl)</code></pre>
 <pre><code>## Warning in x@ptr$write(filename, layer, filetype, insert[1], overwrite[1], :
-## GDAL Message 6: dataset /tmp/RtmpDQSpZJ/filed4336513a352.gpkg does not support
+## GDAL Message 6: dataset /tmp/Rtmp4zrC1m/filedf9d7a5dd52c.gpkg does not support
 ## layer creation option ENCODING</code></pre>
 <pre class="r"><code>write_VECT(b_pump, vname=&quot;b_pump&quot;, flags=fl)</code></pre>
 <pre><code>## Warning in x@ptr$write(filename, layer, filetype, insert[1], overwrite[1], :
-## GDAL Message 6: dataset /tmp/RtmpDQSpZJ/filed43333a044a8.gpkg does not support
+## GDAL Message 6: dataset /tmp/Rtmp4zrC1m/filedf9d277814c2.gpkg does not support
 ## layer creation option ENCODING</code></pre>
 <pre class="r"><code>write_VECT(nb_pump, vname=&quot;nb_pump&quot;, flags=fl)</code></pre>
 <pre><code>## Warning in x@ptr$write(filename, layer, filetype, insert[1], overwrite[1], :
-## GDAL Message 6: dataset /tmp/RtmpDQSpZJ/filed433183fa778.gpkg does not support
+## GDAL Message 6: dataset /tmp/Rtmp4zrC1m/filedf9d65fa16fb.gpkg does not support
 ## layer creation option ENCODING</code></pre>
 <pre class="r"><code>write_VECT(deaths, vname=&quot;deaths&quot;, flags=fl)</code></pre>
 <pre><code>## Warning in x@ptr$write(filename, layer, filetype, insert[1], overwrite[1], :
-## GDAL Message 6: dataset /tmp/RtmpDQSpZJ/filed43312a7f195.gpkg does not support
+## GDAL Message 6: dataset /tmp/Rtmp4zrC1m/filedf9d57894545.gpkg does not support
 ## layer creation option ENCODING</code></pre>
 <pre class="r"><code>execGRASS(&quot;g.list&quot;, type=&quot;vector&quot;, intern=TRUE)</code></pre>
 <pre><code>## [1] &quot;b_pump&quot;    &quot;bbo&quot;       &quot;buildings&quot; &quot;deaths&quot;    &quot;nb_pump&quot;</code></pre>
@@ -1033,7 +1033,7 @@ nb_deaths &lt;- extract(res_nb, deaths)</code></pre>
 </div>
 <div id="spatio-temporal-cubes" class="section level2">
 <h2>Spatio-temporal cubes</h2>
-<p><a href="https://r-spatial.org/book/06-Cubes.html" class="uri">https://r-spatial.org/book/06-Cubes.html</a> <a href="https://r-spatial.org/book/09-Large.html" class="uri">https://r-spatial.org/book/09-Large.html</a> <a href="https://cran.r-project.org/package=stars" class="uri">https://cran.r-project.org/package=stars</a> <a href="https://cran.r-project.org/package=starsExtra" class="uri">https://cran.r-project.org/package=starsExtra</a> <a href="https://cran.r-project.org/package=gdalcubes" class="uri">https://cran.r-project.org/package=gdalcubes</a> <a href="https://cran.r-project.org/package=openeo" class="uri">https://cran.r-project.org/package=openeo</a> <a href="https://cran.r-project.org/package=sits" class="uri">https://cran.r-project.org/package=sits</a></p>
+<p><a href="https://r-spatial.org/book/06-Cubes.html" class="uri">https://r-spatial.org/book/06-Cubes.html</a> <a href="https://edzer.github.io/sdsr_exercises/06.html" class="uri">https://edzer.github.io/sdsr_exercises/06.html</a> <a href="https://r-spatial.org/book/09-Large.html" class="uri">https://r-spatial.org/book/09-Large.html</a> <a href="https://edzer.github.io/sdsr_exercises/09.html" class="uri">https://edzer.github.io/sdsr_exercises/09.html</a> <a href="https://cran.r-project.org/package=stars" class="uri">https://cran.r-project.org/package=stars</a> <a href="https://cran.r-project.org/package=starsExtra" class="uri">https://cran.r-project.org/package=starsExtra</a> <a href="https://cran.r-project.org/package=gdalcubes" class="uri">https://cran.r-project.org/package=gdalcubes</a> <a href="https://cran.r-project.org/package=openeo" class="uri">https://cran.r-project.org/package=openeo</a> <a href="https://cran.r-project.org/package=sits" class="uri">https://cran.r-project.org/package=sits</a></p>
 </div>
 <div id="juridicial-boundary-changes" class="section level2">
 <h2>Juridicial (boundary) changes</h2>
